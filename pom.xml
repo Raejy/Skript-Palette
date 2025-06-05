@@ -8,7 +8,7 @@
     <dependency>
         <groupId>org.spigotmc</groupId>
         <artifactId>spigot-api</artifactId>
-        <version>1.21.5</version>
+        <version>1.21.5-103</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
