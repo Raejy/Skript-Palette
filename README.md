@@ -1,3 +1,7 @@
+![Skpalette Logo](./Skpalette-logo.png)
+
+
+
 # SkriptPalette
 
 _SkriptPalette_ is a vibrant and developer-friendly Skript addon designed to bring **enhanced visual effects** and creative tools to your Minecraft server scripts. Perfect for scripters who want to add a splash of color, particles, and dynamic visuals—without complex coding!
