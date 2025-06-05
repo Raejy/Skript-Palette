@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'maven-publish'  // For publishing to Maven repositories, if needed
+}
+
+group = 'me.raejy'  // Your package name
+version = '0.1'  // Your version
+
+sourceCompatibility = '17'  // Adjust the Java version if necessary
+
+repositories {
+    mavenCentral()  // Standard Maven repository
+    maven {
+        url 'https://repo.dmulloy2.net/repository/public/'  // Skript repository
+    }
+}
+
+dependencies {
+    implementation 'com.sk89q.skript:skript-api:2.5.3'  // Skript API, adjust version as needed
+    compileOnly 'org.bukkit:bukkit:1.20.0'  // Bukkit API for Minecraft 1.20.0
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.jar {
+    archiveBaseName.set('SkriptPalette')  // Adjust to your desired output name
+    archiveVersion.set(version)
+    manifest {
+        attributes(
+            'Main-Class': 'me.raejy.skriptpalette.SkriptPalette',  // Your main class
+            'Version': version,
+            'Author': 'Raejy',
+            'API-Version': '1.20'
+        )
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = uri('path/to/your/repository')  // Adjust this for your Maven repository if needed
+        }
+    }
+}
